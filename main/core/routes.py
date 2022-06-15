@@ -1,8 +1,14 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 
-core_bp = Blueprint("core_bp", __name__)
+core_bp = Blueprint(
+    "core_bp",
+    __name__,
+    template_folder="templates",
+    static_folder="static",
+    static_url_path="/static/core",
+)
 
 
 @core_bp.route("/")
 def index():
-    return "Hello Everyone | This is a demo page."
+    return render_template("index.html")
