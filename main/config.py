@@ -7,12 +7,15 @@ class ProductionConfig(Config):
 
 
 class DevelopmentConfig(Config):
-    TESTING = True
-    DEBUG = True
-    FLASK_ENV = "development"
-
     SECRET_KEY = "asdfaweava233423o4u234023482309j2039dj2039du203ur2309r234092340239j"
-    DATABASE_URI = "sqlite:////tmp/primary.db"
+    SQLALCHEMY_DATABASE_URI = (
+        "postgresql://demo_user:demo_password@localhost:5432/demo_db"
+    )
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    REDIS_HOST = "localhost"
+    REDIS_PORT = 6379
+    REDIS_DB = 0
 
 
 class TestingConfig(Config):
