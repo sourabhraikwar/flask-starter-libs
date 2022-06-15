@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <title>{% block title %} Landing {% endblock %} - Starter Kit</title>
+    {% endblock %}
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='core/css/bootstrap/bootstrap.min.css') }}">
+    {% block extra_css %}
+    {% endblock extra_css %}
+  </head>
+  <body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+      {% block footer %}
+      {% endblock %}
+    </div>
+    {% block extra_js %}
+    {% endblock extra_js %}
+  </body>
+</html>
